@@ -20,11 +20,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->bindBlueprintMacro();
-
+        $this->registerBladeExtensions();
         // Bind eloquent models to IoC container
 //        $this->app['config']['rinvex.attributes.models.attribute'] === Attribute::class
 //        || $this->app->alias('rinvex.attributes.attribute', Attribute::class);
-
         $this->app->bind(\Yajra\DataTables\Html\Builder::class, \App\Overrides\Yajra\DataTables\Html\Builder::class);
     }
 
@@ -40,9 +39,9 @@ class AppServiceProvider extends ServiceProvider
 //        $router->model('attribute', config('rinvex.attributes.models.attribute'));
 
         // Map relations
-        Relation::morphMap([
-            'attribute' => config('rinvex.attributes.models.attribute'),
-        ]);
+        // Relation::morphMap([
+        //     'attribute' => config('rinvex.attributes.models.attribute'),
+        // ]);
 
         // Add default attributes types
         Attribute::typeMap([
@@ -56,17 +55,17 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         // Register blade extensions
-        $this->registerBladeExtensions();
+
         require __DIR__.'/../../routes/menus/admin.php';
 //        $this->app->afterResolving('blade.compiler', function () {
 //            require __DIR__.'/../../routes/menus/admin.php';
 //        });
 
-        Relation::morphMap([
-            'product' => Product::class,
-        ]);
+        // Relation::morphMap([
+        //     'products' => Product::class,
+        // ]);
 
-        app('rinvex.attributes.entities')->push('product');
+        app('rinvex.attributes.entities')->push(\App\Product::class);
 
     }
 
@@ -122,7 +121,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
             // @attributes($entity)
             $bladeCompiler->directive('attributes', function ($expression) {
-                return "<?php echo {$expression}->getEntityAttributes()->map->render({$expression}, request()->route('accessarea'))->implode('') ?: view('cortex/attributes::".request()->route('accessarea').".partials.no-results'); ?>";
+                return "<?php echo e(with($expression)->getEntityAttributes()->map->render({$expression}, 'adminarea')); ?>";
             });
         });
     }

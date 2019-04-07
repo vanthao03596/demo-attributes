@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/test', function () {
-    return view('attribute');
+Auth::loginUsingId(1);
+
+Route::get('/hello', function () {
+    $product = \App\Product::find(1);
+    return view('welcome', compact('product'));
+    // return view('attribute');
 });
 
 Route::group(['as' => 'adminarea.' ], function () {
