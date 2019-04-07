@@ -1,0 +1,20 @@
+{
+    "/js/app.js": "/js/app.js?id=c6183377e688643be540",
+    "/js/chart.js": "/js/chart.js?id=ccda930789e5f8295a7a",
+    "/js/datatables.js": "/js/datatables.js?id=19ef9d309498fd6657e6",
+    "/js/embed.js": "/js/embed.js?id=7440766e7bca4f6e03f8",
+    "/css/app.css": "/css/app.css?id=0924f652c719f323c584",
+    "/css/vendor.css": "/css/vendor.css?id=07e004081b0de702b3ea",
+    "/css/datatables.css": "/css/datatables.css?id=005e02cbfd3f0896fb39",
+    "/css/fullcalendar.css": "/css/fullcalendar.css?id=43d392272248f8c950b9",
+    "/css/terminal.css": "/css/terminal.css?id=c8f4d05a786a8b512bfc",
+    "/css/theme-frontarea.css": "/css/theme-frontarea.css?id=c306762d246683d47ab5",
+    "/css/theme-adminarea.css": "/css/theme-adminarea.css?id=583f1fda604ceff54d37",
+    "/css/theme-tenantarea.css": "/css/theme-tenantarea.css?id=c306762d246683d47ab5",
+    "/css/theme-managerarea.css": "/css/theme-managerarea.css?id=6f80499cce545ff72214",
+    "/js/formbuilder.js": "/js/formbuilder.js?id=352f63a4c97089b273ff",
+    "/js/fullcalendar.js": "/js/fullcalendar.js?id=2895043b004a23d7db44",
+    "/js/manifest.js": "/js/manifest.js?id=844cdbfe9e6b6b56ae8f",
+    "/js/terminal.js": "/js/terminal.js?id=a0194f689ffbf0c603f7",
+    "/js/vendor.js": "/js/vendor.js?id=142c4343b5e305bacbc2"
+}
