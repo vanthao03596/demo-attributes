@@ -22,6 +22,7 @@
     <script src="{{ mix('js/vendor.js') }}" defer></script>
     @stack('vendor-scripts')
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ asset('messages.js') }}" defer></script>
 </head>
 <body class="hold-transition skin-blue fixed sidebar-mini">
     {{-- Main content --}}

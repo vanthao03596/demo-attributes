@@ -41,7 +41,7 @@ class AttributesDataTable extends AbstractDataTable
             : '"<a href=\""+ route(\'adminarea.attributes.edit\', {attribute: full.id}).url()+"\">"+data+"</a>"';
         return [
             'name' => ['title' => trans('common.name'), 'render' => $link, 'responsivePriority' => 0],
-            'type' => ['title' => trans('common.type'), 'render' => trans('common.boolean')],
+            'type' => ['title' => trans('common.type'), 'render' => 'Lang.trans(\'common.\'+data)'],
             'group' => ['title' => trans('common.group'), 'visible' => false],
             'is_collection' => ['title' => trans('common.is_collection')],
             'is_required' => ['title' => trans('common.is_required')],
