@@ -61,11 +61,11 @@ class AppServiceProvider extends ServiceProvider
 //            require __DIR__.'/../../routes/menus/admin.php';
 //        });
 
-        // Relation::morphMap([
-        //     'products' => Product::class,
-        // ]);
+        Relation::morphMap([
+            'product' => Product::class,
+        ]);
 
-        app('rinvex.attributes.entities')->push(\App\Product::class);
+        app('rinvex.attributes.entities')->push('product');
 
     }
 
@@ -121,7 +121,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
             // @attributes($entity)
             $bladeCompiler->directive('attributes', function ($expression) {
-                return "<?php echo e(with($expression)->getEntityAttributes()->map->render({$expression}, 'adminarea')); ?>";
+                return "<?php echo ($expression)->getEntityAttributes()->map->render({$expression}, 'adminarea'); ?>";
             });
         });
     }

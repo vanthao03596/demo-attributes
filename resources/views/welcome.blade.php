@@ -16,7 +16,13 @@
 
         {{-- Main content --}}
         <section class="content">
-            @attributes($product)
+            <form action="/test" id="create-product-form" method="POST">
+                @csrf
+                @foreach($product->getEntityAttributes() as $attribute)
+                    {!! $attribute->render($product, 'adminarea') !!}
+                @endforeach
+                {{ Form::button(trans('common.submit'), ['class' => 'btn btn-primary btn-flat', 'type' => 'submit']) }}
+            </form>
         </section>
 
     </div>

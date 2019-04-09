@@ -16,7 +16,10 @@ Auth::loginUsingId(1);
 Route::get('/hello', function () {
     $product = \App\Product::find(1);
     return view('welcome', compact('product'));
-    // return view('attribute');
+});
+
+Route::post('/test', function() {
+    dd(request()->all());
 });
 
 Route::group(['as' => 'adminarea.' ], function () {
